@@ -11,11 +11,11 @@ FILE, *ARGS = sys.argv
 TAB_ID_FILENAME = os.path.join(os.path.dirname(FILE), 'tab_id')
 
 
-def _launch_Iterm(_id):  # type: (dict) -> None
+def _launch_iterm(_id):  # type: (dict) -> None
     """Launch Iterm2 if is not running already.
 
     Args:
-        _id (dict): a dict with the key `bundle` for the application bundle 
+        _id (dict): a dict with the key `bundle` for the application bundle
         identifier, and a key `app_name` for the application name.
     """
     if not AppKit.NSRunningApplication.runningApplicationsWithBundleIdentifier_(_id['bundle']):
@@ -31,7 +31,7 @@ def _launch_app(app_name):  # type: (str) -> None
     AppKit.NSWorkspace.sharedWorkspace().launchApplication_(app_name)
 
 
-_launch_Iterm({"bundle": "com.googlecode.iterm2", "app_name": "iTerm"})
+_launch_iterm({"bundle": "com.googlecode.iterm2", "app_name": "iTerm"})
 
 
 async def get_tab_id():  # type: () -> str
