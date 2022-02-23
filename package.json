@@ -1,0 +1,106 @@
+{
+	"name": "execute-in-iterm2",
+	"displayName": "Execute in iTerm2",
+	"publisher": "virgilsisoe",
+	"license": "MIT",
+	"icon": "images/iterm_icon.png",
+	"keywords": [
+		"iTerm",
+		"Terminal",
+		"python",
+		"javascript",
+		"typescript",
+		"c++",
+		"perl",
+		"shell",
+		"log",
+		"lua",
+		"php"
+	],
+	"description": "Execute the current active file inside iTerm2.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "execute-in-iterm2.executeFileCommand",
+				"title": "Execute file command",
+				"category": "iTerm2",
+				"icon": {
+					"dark": "images/execute-dark.svg",
+					"light": "images/execute-light.svg"
+				}
+			},
+			{
+				"command": "execute-in-iterm2.executeInputCommand",
+				"title": "Execute command",
+				"category": "iTerm2"
+			}
+		],
+		"configuration": [
+			{
+				"title": "Send to iTerm2",
+				"properties": {
+					"executeInITerm2.pythonPath": {
+						"type": "string",
+						"markdownDescription": "iTerm2 Python path or a Python interpreter that has access to `iTerm2` and `pyobjc` modules"
+					},
+					"executeInITerm2.fileCommands": {
+						"type": "object",
+						"markdownDescription": "A key value pair for extension and command: `\"extension\":\"command\"",
+						"default": {
+							"py": "python ${filePath}",
+							"lua": "lua ${filePath}",
+							"pl": "perl ${filePath}",
+							"sh": "sh ${filePath}",
+							"zsh": "zsh ${filePath}",
+							"js": "node ${filePath}",
+							"ts": "ts-node ${filePath}",
+							"php": "php ${filePath}",
+							"cpp": "cd ${dir} && g++-9 -lstdc++fs -std=c++1z -Wall -Wextra  ${fileName} -o ${fileNameNoExt}.cxx && ./${fileNameNoExt}.cxx",
+							"log": "tail -f ${filePath}"
+						}
+					}
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "execute-in-iterm2.executeFileCommand",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.64.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.3",
+		"typescript": "^4.4.4",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
