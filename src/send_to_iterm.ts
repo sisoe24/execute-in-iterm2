@@ -73,6 +73,39 @@ function replacePlaceholders(terminalCmd: string, filePath: string): string {
 }
 
 /**
+ * Send command to iTerm2.
+ *
+ * Send the command to iTerm2 to be executed. If errors happens when sending the
+ * command, an error dialog will be shown to user. Also if settings
+ * `executeInITerm2.pythonPath` is not set, method will  stop and return null.
+ *
+ * @param terminalCmd the terminal command to send.
+ * @returns null if it did not sent the code, true if succeeded.
+ */
+export function executeInIterm(terminalCmd: string): boolean | null {
+    const python = extensionConfig("pythonPath") as string;
+    if (!python) {
+        vscode.window.showErrorMessage(
+            "Configuration `Execute In ITerm2: Python Path` was not set."
+        );
+        return null;
+    }
+
+    exec(`${python} ${sendScript} "${terminalCmd}"`, (error, stdout, stderr) => {
+        if (error) {
+            vscode.window.showErrorMessage(error.message);
+            return null;
+        }
+        if (stderr) {
+            vscode.window.showErrorMessage(stderr);
+            return null;
+        }
+        // XXX: can use stdout for something?
+    });
+    return true;
+}
+
+/**
  * Execute a file command.
  *
  * Execute the file command based on configuration settings and file extension.
@@ -116,37 +149,4 @@ export async function executeInputCommand(): Promise<boolean | null> {
         return executeInIterm(terminalCmd);
     }
     return false;
-}
-
-/**
- * Send command to iTerm2.
- *
- * Send the command to iTerm2 to be executed. If errors happens when sending the
- * command, an error dialog will be shown to user. Also if settings
- * `executeInITerm2.pythonPath` is not set, method will  stop and return null.
- *
- * @param terminalCmd the terminal command to send.
- * @returns null if it did not sent the code, true if succeeded.
- */
-export function executeInIterm(terminalCmd: string): boolean | null {
-    const python = extensionConfig("pythonPath");
-    if (!python) {
-        vscode.window.showErrorMessage(
-            "Configuration `Execute In ITerm2: Python Path` was not set."
-        );
-        return null;
-    }
-
-    exec(`${python} ${sendScript} "${terminalCmd}"`, (error, stdout, stderr) => {
-        if (error) {
-            vscode.window.showErrorMessage(error.message);
-            return null;
-        }
-        if (stderr) {
-            vscode.window.showErrorMessage(stderr);
-            return null;
-        }
-        // XXX: can use stdout for something?
-    });
-    return true;
 }
