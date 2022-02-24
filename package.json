@@ -6,7 +6,7 @@
 	"icon": "images/iterm_icon.png",
 	"repository": {
 		"type": "git",
-		"url":"https://github.com/sisoe24/execute-in-iterm2"
+		"url": "https://github.com/sisoe24/execute-in-iterm2"
 	},
 	"keywords": [
 		"iTerm",
@@ -22,7 +22,7 @@
 		"php"
 	],
 	"description": "Execute the current active file inside iTerm2.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.64.0"
 	},
