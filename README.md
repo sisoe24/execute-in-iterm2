@@ -156,3 +156,7 @@ Defaults commands included:
 - [ ] Tests.
 
 ## 1.8. Screenshots
+
+![File Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/file_command.gif)
+
+![Input Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/input_command.gif)
