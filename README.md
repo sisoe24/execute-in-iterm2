@@ -28,9 +28,8 @@ Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file ex
 
 The extension setting: [iTerm2: Python Path](#151-executeiniterm2pythonpath) must contain a valid Python interpreter with the `iTerm2` and `pyobjc` modules.
 
-- You should have one already; the one iTerm2 is using and is located in `~/Library/ApplicationSupport/iTerm2/iterm2env/versions/*/bin/python3`.
-- Alternatively you can create your own environment and install `iterm2` module from `pip`.
-This will take care of `pyobjc` as well since it is a dependency.
+- If you don't have it already installed, you should go to **Scripts > Manage > Install Python Runtime** and let iTerm2 install the python interpreter which you can use for the path. The interpreter can be found at `~/Library/ApplicationSupport/iTerm2/iterm2env/versions/*/bin/python3`.
+- Alternatively you can create your own environment and install `iterm2` module from `pip`. This should take care of `pyobjc` as well since it is a dependency.
 
 >For more information refer to the [official documentation](https://iterm2.com/python-api/tutorial/running.html).
 
