@@ -86,7 +86,7 @@ export function executeInIterm(terminalCmd: string): boolean | null {
     const python = extensionConfig("pythonPath") as string;
     if (!python) {
         vscode.window.showErrorMessage(
-            "Configuration `Execute In ITerm2: Python Path` was not set."
+            "Setting `Execute In ITerm2: Python Path` was not set."
         );
         return null;
     }
