@@ -22,7 +22,14 @@ Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file ex
     - [1.5.2.  `executeInITerm2.fileCommands`](#152--executeiniterm2filecommands)
   - [1.6. Known Issues](#16-known-issues)
   - [1.7. TODO](#17-todo)
-  - [1.8. Screenshots](#18-screenshots)
+
+File command
+
+![File Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/file_command.gif)
+
+Input Command
+
+![Input Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/input_command.gif)
 
 ## 1.1. Requirements
 
@@ -152,13 +159,3 @@ Defaults commands included:
 - [ ] More complex command matching pattern to allow different commands for the same file extension.
 - [ ] Expose more of the iTerm2 Python API to Visual Studio Code like tab/window manipulation, etc.
 - [ ] Tests.
-
-## 1.8. Screenshots
-
-File command
-
-![File Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/file_command.gif)
-
-Input Command
-
-![Input Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/input_command.gif)
