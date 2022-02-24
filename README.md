@@ -1,3 +1,12 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/de4f5f35d20642d0b84d60d5eae941d9)](https://www.codacy.com/gh/sisoe24/execute-in-iterm2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sisoe24/execute-in-iterm2&amp;utm_campaign=Badge_Grade)
+[![DeepSource](https://deepsource.io/gh/sisoe24/execute-in-iterm2.svg/?label=active+issues&show_trend=true&token=_61Aj0xbCTjjbxPEod668-Ay)](https://deepsource.io/gh/sisoe24/execute-in-iterm2/?ref=repository-badge)
+
+[![Download](https://img.shields.io/badge/Marketplace-Download-blue)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2&ssr=false#version-history)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![Ratings](https://img.shields.io/visual-studio-marketplace/r/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![Last Update](https://img.shields.io/visual-studio-marketplace/last-updated/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+
 # 1. Execute in iTerm2 README
 
 Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file extension or input dialog.
@@ -122,7 +131,7 @@ Defaults commands included:
     "py": "python ${filePath}",
     "lua": "lua ${filePath}",
     "pl": "perl ${filePath}",
-    "cpp": "g++ ${filePath} -o out && ./out",
+    "cpp": "cd ${dir} && g++ ${filePath} -o out && ./out",
     "sh": "sh ${filePath}",
     "zsh": "zsh ${filePath}",
     "js": "node ${filePath}",
