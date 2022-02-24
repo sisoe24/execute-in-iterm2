@@ -91,7 +91,7 @@ export function executeInIterm(terminalCmd: string): boolean | null {
         return null;
     }
 
-    exec(`${python} ${sendScript} "${terminalCmd}"`, (error, stdout, stderr) => {
+    exec(`"${python}" ${sendScript} "${terminalCmd}"`, (error, stdout, stderr) => {
         if (error) {
             vscode.window.showErrorMessage(error.message);
             return null;
