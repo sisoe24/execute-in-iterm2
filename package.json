@@ -4,6 +4,10 @@
 	"publisher": "virgilsisoe",
 	"license": "MIT",
 	"icon": "images/iterm_icon.png",
+	"repository": {
+		"type": "git",
+		"url":"https://github.com/sisoe24/execute-in-iterm2"
+	},
 	"keywords": [
 		"iTerm",
 		"Terminal",
@@ -66,7 +70,7 @@
 							"js": "node ${filePath}",
 							"ts": "ts-node ${filePath}",
 							"php": "php ${filePath}",
-							"cpp": "cd ${dir} && g++-9 -lstdc++fs -std=c++1z -Wall -Wextra  ${fileName} -o ${fileNameNoExt}.cxx && ./${fileNameNoExt}.cxx",
+							"cpp": "cd ${dir} && g++ ${filePath} -o out && ./out",
 							"log": "tail -f ${filePath}"
 						}
 					}
