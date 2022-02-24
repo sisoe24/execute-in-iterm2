@@ -157,6 +157,10 @@ Defaults commands included:
 
 ## 1.8. Screenshots
 
+File command
+
 ![File Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/file_command.gif)
+
+Input Command
 
 ![Input Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/input_command.gif)
