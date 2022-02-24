@@ -37,15 +37,15 @@ The extension setting: [iTerm2: Python Path](#151-executeiniterm2pythonpath) mus
 
 - Send commands to iTerm2 based on current file extension.
 - Send commands to iTerm2 from input dialog.
-- Launch the application is is not present and create a "vscode" tab for the sending commands.
+- Launch the application if is not active and create a "vscode" tab for the sending commands.
 
 ## 1.3. Terminal commands & placeholders
 
 The extension offers to ability to create a command based on a file extension.
 
-The commands are going to represent what you would write inside the terminal. You can define more commands other that the ones already included in the settings [iTerm2: File Commands](#152-executeiniterm2filecommands) in the form of: `"file_extension": "command"`.
+The commands are going to represent what you would write inside the terminal. Some default commands for common files are already provided but you can define more in the form of: `"file_extension": "command"`. See more: [iTerm2: File Commands](#152-executeiniterm2filecommands).
 
-> **Note:** The examples bellow will included some [placeholders](#131-placeholders) included with the extension.
+> **Note:** The examples bellow will include some [placeholders](#131-placeholders) that are part of the extension.
 
 A simple example:
 
@@ -63,7 +63,7 @@ More complex commands can be created:
 }
 ```
 
-Is also possible to just do an action based on the file extension and create commands for non programming languages:
+Is also possible to create commands for non programming languages:
 
 ```json
 {
