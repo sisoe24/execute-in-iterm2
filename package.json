@@ -70,7 +70,7 @@
 							"js": "node ${filePath}",
 							"ts": "ts-node ${filePath}",
 							"php": "php ${filePath}",
-							"cpp": "cd ${dir} && g++ ${filePath} -o out && ./out",
+							"cpp": "cd ${dir} && g++ ${fileName} -o out && ./out",
 							"log": "tail -f ${filePath}"
 						}
 					}

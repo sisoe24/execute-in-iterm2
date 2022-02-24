@@ -134,7 +134,7 @@ Defaults commands included:
     "py": "python ${filePath}",
     "lua": "lua ${filePath}",
     "pl": "perl ${filePath}",
-    "cpp": "cd ${dir} && g++ ${filePath} -o out && ./out",
+    "cpp": "cd ${dir} && g++ ${fileName} -o out && ./out",
     "sh": "sh ${filePath}",
     "zsh": "zsh ${filePath}",
     "js": "node ${filePath}",
@@ -148,7 +148,7 @@ Defaults commands included:
 
 ## 1.6. Known Issues
 
-- Does not work properly when iTerm2 window is minimized as `CMD + M`
+- Does not work properly when iTerm2 window is minimized (`CMD + M`).
 - The button in the editor toolbar is always present. This is because, technically, every file could potentially be used in a command.
 - Constantly changing iTerm2 active window, will cause the extension to create multiple tabs.
 - Visual Studio Code should retake focus after iTerm2 executes the command, but sometime it does and sometime it doesn't.
