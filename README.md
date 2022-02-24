@@ -71,8 +71,6 @@ Is also possible to create commands for non programming languages:
 }
 ```
 
-> Note: extensions should not have the dot `.` include
-
 ### 1.3.1. Placeholders
 
 Some convenient placeholders are provided when writing commands:
@@ -121,7 +119,7 @@ Path of the Python interpreter that has access to the `iTerm2` module. More info
 
 ### 1.5.2.  `executeInITerm2.fileCommands`
 
-A json object with `key: string` (`"file_extension": "command"`) value pair to create commands.
+A json object with `key: string` (`"file_extension": "command"`) value pair to create commands. Note: extensions should not have the dot `.` include.
 
 Defaults commands included:
 
