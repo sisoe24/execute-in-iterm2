@@ -18,17 +18,11 @@ Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file ex
     - [1.3.1. Placeholders](#131-placeholders)
   - [1.4. Available Extension Commands](#14-available-extension-commands)
   - [1.5. Extension Settings](#15-extension-settings)
-    - [1.5.1. `executeInITerm2.pythonPath`](#151-executeiniterm2pythonpath)
-    - [1.5.2.  `executeInITerm2.fileCommands`](#152--executeiniterm2filecommands)
   - [1.6. Known Issues](#16-known-issues)
   - [1.7. TODO](#17-todo)
+  - [1.8. Demo](#18-demo)
 
-Demo
-
-| File Command                                                                                              | Input Command                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| ![File Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/file_command.gif) | ![Input Command](https://raw.githubusercontent.com/sisoe24/execute-in-iterm2/main/images/input_command.gif) |
-|                                                                                                           |
+![File Command](/images/file_command.gif)
 
 ## 1.1. Requirements
 
@@ -119,32 +113,32 @@ Example `keybindings.json`:
 
 ## 1.5. Extension Settings
 
-### 1.5.1. `executeInITerm2.pythonPath`
+- `executeInITerm2.pythonPath`
 
-Path of the Python interpreter that has access to the `iterm2` module. More info on [Requirements](#11-requirements).
+  Path of the Python interpreter that has access to the `iterm2` module. More info on [Requirements](#11-requirements).
 
-### 1.5.2.  `executeInITerm2.fileCommands`
+- `executeInITerm2.fileCommands`
 
-A json object with `key: string` (`"file_extension": "command"`) value pair to create commands. Note: extensions should not have the dot `.` include.
+  A json object with `key: string` (`"file_extension": "command"`) value pair to create commands. Note: extensions should not have the dot `.` include.
 
-Defaults commands included:
+  Defaults commands included:
 
-```json
-"executeInITerm2.fileCommands": {
-    "py": "python ${filePath}",
-    "lua": "lua ${filePath}",
-    "pl": "perl ${filePath}",
-    "cpp": "cd ${dir} && g++ ${fileName} -o out && ./out",
-    "sh": "sh ${filePath}",
-    "zsh": "zsh ${filePath}",
-    "js": "node ${filePath}",
-    "ts": "ts-node ${filePath}",
-    "php": "php ${filePath}",
-    "log": "tail -f ${filePath}"
-}
-```
+  ```json
+  "executeInITerm2.fileCommands": {
+      "py": "python ${filePath}",
+      "lua": "lua ${filePath}",
+      "pl": "perl ${filePath}",
+      "cpp": "cd ${dir} && g++ ${fileName} -o out && ./out",
+      "sh": "sh ${filePath}",
+      "zsh": "zsh ${filePath}",
+      "js": "node ${filePath}",
+      "ts": "ts-node ${filePath}",
+      "php": "php ${filePath}",
+      "log": "tail -f ${filePath}"
+  }
+  ```
 
-> If you language is not present, feel free to submit a request or make a PR.
+  > If you language is not present, feel free to submit a request or make a PR.
 
 ## 1.6. Known Issues
 
@@ -159,3 +153,9 @@ Defaults commands included:
 - [ ] More complex command matching pattern to allow different commands for the same file extension.
 - [ ] Expose more of the iTerm2 Python API to Visual Studio Code like tab/window manipulation, etc.
 - [ ] Tests.
+
+## 1.8. Demo
+
+Input command
+
+![Input Command](/images/input_command.gif)
