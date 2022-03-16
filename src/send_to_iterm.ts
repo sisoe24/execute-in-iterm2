@@ -1,8 +1,10 @@
 import * as path from "path";
 import * as vscode from "vscode";
 import { exec } from "child_process";
+import { writeFileSync } from "fs";
 
-const sendScript = path.join(path.resolve(__dirname, "../scripts"), "send_iterm.py");
+const scriptsPath = path.resolve(__dirname, "../scripts");
+const sendScript = path.join(scriptsPath, "send_iterm.py");
 
 /**
  * Get configuration property value.
@@ -21,6 +23,15 @@ function extensionConfig(property: string): unknown {
     }
 
     return subConfig;
+}
+
+/**
+ * Reset tabs id every time vscode reloads.
+ * 
+ * This is to keep clean the file of old files.
+ */
+export function resetTabsId() {
+    writeFileSync(path.join(scriptsPath, "tabs_id.json"), "{}");
 }
 
 /**
@@ -85,9 +96,7 @@ function replacePlaceholders(terminalCmd: string, filePath: string): string {
 export function executeInIterm(terminalCmd: string): boolean | null {
     const python = extensionConfig("pythonPath") as string;
     if (!python) {
-        vscode.window.showErrorMessage(
-            "Setting `Execute In ITerm2: Python Path` was not set."
-        );
+        vscode.window.showErrorMessage("Setting `Execute In ITerm2: Python Path` was not set.");
         return null;
     }
 
@@ -100,6 +109,7 @@ export function executeInIterm(terminalCmd: string): boolean | null {
             vscode.window.showErrorMessage(stderr);
             return null;
         }
+        console.log(stdout);
         // XXX: can use stdout for something?
     });
     return true;

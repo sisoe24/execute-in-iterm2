@@ -1,7 +1,9 @@
 import * as vscode from "vscode";
-import { executeFileCommand, executeInputCommand } from "./send_to_iterm";
+import { executeFileCommand, executeInputCommand, resetTabsId } from "./send_to_iterm";
 
 export function activate(context: vscode.ExtensionContext): void {
+    resetTabsId();
+
     context.subscriptions.push(
         vscode.commands.registerCommand("execute-in-iterm2.executeFileCommand", () => {
             executeFileCommand();
