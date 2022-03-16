@@ -5,4 +5,4 @@ node_modules
 *.vsix
 
 demo
-scripts/tab_id
+scripts/tabs_id.json
