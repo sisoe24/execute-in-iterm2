@@ -1,6 +1,7 @@
 """Send command to iTerm2 active tab."""
 import os
 import sys
+import json
 import shlex
 
 import AppKit
@@ -8,7 +9,7 @@ import iterm2
 
 FILE, *ARGS = sys.argv
 
-TAB_ID_FILENAME = os.path.join(os.path.dirname(FILE), 'tab_id')
+TAB_ID_FILENAME = os.path.join(os.path.dirname(FILE), 'tabs_id.json')
 
 
 def _launch_iterm(_id):  # type: (dict) -> None
@@ -34,25 +35,23 @@ def _launch_app(app_name):  # type: (str) -> None
 _launch_iterm({"bundle": "com.googlecode.iterm2", "app_name": "iTerm"})
 
 
-async def get_tab_id():  # type: () -> str
-    """Get iTerm2 tab id.
-
-    If not file is found then do nothing.
+async def get_tab_id():  # type: () -> dict
+    """Get the tabs id json file.
 
     Returns:
-        str: the tab id numeric string.
+        dict: the json data or an empty dict if file is not found.
     """
     try:
         with open(TAB_ID_FILENAME, 'r') as f:
-            return f.read()
+            return json.load(f)
     except FileNotFoundError:
-        pass
+        return {}
 
 
-async def write_tab_id(_id):  # type(str) -> None
-    """Write iTerm2 tab id."""
+async def write_tab_id(obj):  # type(str) -> None
+    """Write iTerm2 tab id into the json file."""
     with open(TAB_ID_FILENAME, 'w') as f:
-        f.write(_id)
+        json.dump(obj, f, indent=4)
 
 
 async def main(connection):
@@ -64,39 +63,40 @@ async def main(connection):
     Args:
         connection (_type_): _description_
     """
-    # NOTE: a lot of code deals with the tab id, which is to reused a tab when
-    # sending commands and not create a new one each time. But I want to find a
-    # different solution, like finding the tab title.
-
     app = await iterm2.async_get_app(connection)
     await app.async_activate()
 
     window = app.current_terminal_window
-
     if not window:
         window = await iterm2.Window.async_create(connection)
 
-    tabs_id = [tab.tab_id for tab in window.tabs]
-    tab_id = await get_tab_id()
+    iterm_tabs_id = [tab.tab_id for tab in window.tabs]
 
-    # If tab id is not in current tabs then a new tab needs to be created
+    terminal_cmd = ARGS.pop(0)
+    filename = os.path.basename(terminal_cmd)
+
+    files_tabs = await get_tab_id()
+    file_tab = files_tabs.get(filename)
+
+    # If tab id is not in current tabs, then a new tab needs to be created
     # otherwise use the existing tab.
-    if tab_id not in tabs_id:
+    if file_tab not in iterm_tabs_id:
         await window.async_create_tab()
-        await window.current_tab.async_set_title('vscode')
+        await window.current_tab.async_set_title(filename)
 
-        new_tab_id = window.current_tab.tab_id
-        tabs_id.append(new_tab_id)
-        await write_tab_id(new_tab_id)
+        iterm_new_tab_id = window.current_tab.tab_id
+        iterm_tabs_id.append(iterm_new_tab_id)
 
-        tab_id = new_tab_id
+        files_tabs.update({filename:  iterm_new_tab_id})
+        await write_tab_id(files_tabs)
 
-    tab_index = tabs_id.index(tab_id)
+        file_tab = iterm_new_tab_id
+
+    tab_index = iterm_tabs_id.index(file_tab)
 
     vscode_tab = window.tabs[tab_index]
     current_tab = vscode_tab.current_session
 
-    terminal_cmd = ARGS.pop(0)
     str_args = shlex.join(ARGS)
 
     await current_tab.async_activate()
