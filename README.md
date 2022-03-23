@@ -45,10 +45,12 @@ The extension setting *iTerm2: Python Path* must contain a valid Python interpre
 
 ![screenshort](/images/screenshot.jpg)
 
+>Note: The button is available only for the file extensions which already have a command declared.
+
 ## 1.4. Execute file command & placeholders
 
 The extension offers to ability to create a command based on the file extension.
-Basically: for this file extension, execute this command, with the command representing what you would write in the terminal.
+Basically, for this file extension, execute this command, with the command representing what you would write in the terminal.
 
 Some default commands for common files are provided, but you can also define your own or modifying the existing ones. (more on [extension settings](#16-extension-settings))
 
