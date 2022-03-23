@@ -3,31 +3,14 @@ import * as vscode from "vscode";
 import { exec } from "child_process";
 import { writeFileSync } from "fs";
 
+import * as utils from "./utils";
+
 const scriptsPath = path.resolve(__dirname, "../scripts");
 const sendScript = path.join(scriptsPath, "send_iterm.py");
 
 /**
- * Get configuration property value.
- *
- * If property name is not found, throws an error.
- *
- * @param property - name of the configuration property to get.
- * @returns - the value of the property.
- */
-function extensionConfig(property: string): unknown {
-    const config = vscode.workspace.getConfiguration("executeInITerm2");
-    const subConfig = config.get(property);
-
-    if (typeof subConfig === "undefined") {
-        throw new Error(`Configuration: ${property} doesn't exist`);
-    }
-
-    return subConfig;
-}
-
-/**
  * Reset tabs id every time vscode reloads.
- * 
+ *
  * This is to keep clean the file of old files.
  */
 export function resetTabsId() {
@@ -44,7 +27,7 @@ export function resetTabsId() {
  * @returns the command or null if no command is found.
  */
 function getFileCommand(fileExt: string): string | null {
-    const command = extensionConfig("fileCommands") as { [key: string]: string };
+    const command = utils.extensionConfig("fileCommands") as { [key: string]: string };
     if (Object.prototype.hasOwnProperty.call(command, fileExt)) {
         return command[fileExt];
     }
@@ -94,7 +77,7 @@ function replacePlaceholders(terminalCmd: string, filePath: string): string {
  * @returns null if it did not sent the code, true if succeeded.
  */
 export function executeInIterm(terminalCmd: string): boolean | null {
-    const python = extensionConfig("pythonPath") as string;
+    const python = utils.extensionConfig("pythonPath") as string;
     if (!python) {
         vscode.window.showErrorMessage("Setting `Execute In ITerm2: Python Path` was not set.");
         return null;
