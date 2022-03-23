@@ -87,7 +87,7 @@
 				{
 					"command": "execute-in-iterm2.executeFileCommand",
 					"group": "navigation",
-					"when": "config.executeInITerm2.other.showToolbarButton"
+					"when": "config.executeInITerm2.other.showToolbarButton && resourceExtname in ext.supportedFiles"
 				}
 			]
 		}
