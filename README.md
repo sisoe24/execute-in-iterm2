@@ -9,7 +9,7 @@
 
 # 1. Execute in iTerm2 README
 
-Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file extension or input dialog from Visual Studio Code.
+Execute commands inside [iTerm2](https://iterm2.com/index.html) based on the file extension or input dialog from Visual Studio Code.
 
 - [1. Execute in iTerm2 README](#1-execute-in-iterm2-readme)
   - [1.1. Requirements](#11-requirements)
@@ -30,14 +30,14 @@ Execute commands inside [iTerm2](https://iterm2.com/index.html) based on file ex
 The extension setting *iTerm2: Python Path* must contain a valid Python interpreter with the `iterm2` and `pyobjc` modules.
 
 - If you don't have it already installed, from iTerm2 application, go to: **Scripts > Manage > Install Python Runtime** and let iTerm2 install the python interpreter which can be found in `~/Library/ApplicationSupport/iTerm2/iterm2env/versions/*/bin/python3`.
-- Alternatively you can create your own environment and install `iterm2` module from `pip`. This should take care of `pyobjc` as well since it is a dependency.
+- Alternatively, you can create your environment and install the `iterm2` module from `pip`. Installing the package should also take care of `pyobjc` since it is a dependency.
 
 > More information on the official documentation: <https://iterm2.com/python-api/tutorial/running.html>
 
 ## 1.2. Features
 
-- Send commands to iTerm2 based on current file extension.
-- Send commands to iTerm2 from input dialog.
+- Send commands to iTerm2 based on the current file extension.
+- Send commands to iTerm2 from the input dialog.
 
 ## 1.3. Usage
 
@@ -52,11 +52,11 @@ The extension setting *iTerm2: Python Path* must contain a valid Python interpre
 The extension offers to ability to create a command based on the file extension.
 Basically, for this file extension, execute this command, with the command representing what you would write in the terminal.
 
-Some default commands for common files are provided, but you can also define your own or modifying the existing ones. (more on [extension settings](#16-extension-settings))
+Some default commands are available, but you can also define your own or modify the existing ones. (more on [extension settings](#16-extension-settings))
 
-> **Note:** The examples bellow will include some [placeholders](#141-placeholders) that are part of the extension.
+> **Note:** The examples below will include some [placeholders](#141-placeholders) which are part of the extension.
 
-A simple example: Execute
+A simple command
 
 ```json
 {
@@ -64,7 +64,7 @@ A simple example: Execute
 }
 ```
 
-More complex commands can be created:
+A more complex command
 
 ```json
 {
@@ -72,7 +72,7 @@ More complex commands can be created:
 }
 ```
 
-Is also possible to create commands for non programming languages:
+It is also possible to create commands for non-programming languages:
 
 ```json
 {
@@ -82,12 +82,12 @@ Is also possible to create commands for non programming languages:
 
 ### 1.4.1. Placeholders
 
-Some convenient placeholders are provided for writing commands:
+Some convenient placeholders are available for writing commands:
 
-- `${dir}`: The directory of the current active file.
-- `${filePath}`: The full path of the current active file.
-- `${fileName}`: The filename of the current active file.
-- `${fileNameNoExt}`: The filename with no extension of the current active file.
+- `${dir}`: The directory of the currently active file.
+- `${filePath}`: The full path of the currently active file.
+- `${fileName}`: The filename of the currently active file.
+- `${fileNameNoExt}`: The filename with no extension of the currently active file.
 
 > NOTE: Placeholders will not work when sending a command via the input box.
 
@@ -95,8 +95,7 @@ Some convenient placeholders are provided for writing commands:
 
 All commands are available by opening the Command Palette (`Command+Shift+P` on macOS and `Ctrl+Shift+P` on Windows/Linux) and typing in one of the following Command Name:
 
-By default the extension does not provide any shortcut, but every command can be assigned to one. (see [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings) for more information)
-
+By default, the extension does not provide any shortcut. But you can assign each command to one.(see [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings) for more information).
 | Command Name                    | Command ID                              | Description                     |
 | ------------------------------- | --------------------------------------- | ------------------------------- |
 | `iTerm2: Execute file command`  | `execute-in-iterm2.executeFileCommand`  | Send command based on file type |
@@ -155,14 +154,14 @@ Example `keybindings.json`:
 
 ## 1.7. Known Issues
 
-- Reloading Visual Studio Code will cause the tabs id to reset, so new tabs will be created instead of using the existing ones.
-- Changing iTerm2 active window, will cause the extension to create new tabs instead of using the existing ones.
-- Does not work properly when iTerm2 window is minimized (`CMD + M`).
-- Visual Studio Code should retake focus after iTerm2 executes the command, but sometime it does, sometime it doesn't.
+- Reloading Visual Studio Code will cause the id tab to reset, so a new one will get created instead of using the existing one.
+- Changing the iTerm2 active window will cause the extension to create a new tab for the new window.
+- It does not work when the iTerm2 window is minimized (`CMD + M`).
+- Visual Studio Code should retake focus after iTerm2 executes the command, but sometimes it does, sometimes it doesn't.
 
 ## 1.8. TODO
 
-- [ ] More complex command matching pattern to allow different commands for the same file extension.
+- [ ] More complex matching patterns to allow different commands for the same file extension.
 - [ ] Expose more of the iTerm2 Python API to Visual Studio Code like tab/window manipulation, etc.
 - [ ] Tests.
 
