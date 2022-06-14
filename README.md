@@ -1,11 +1,16 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/de4f5f35d20642d0b84d60d5eae941d9)](https://www.codacy.com/gh/sisoe24/execute-in-iterm2/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sisoe24/execute-in-iterm2&amp;utm_campaign=Badge_Grade)
 [![DeepSource](https://deepsource.io/gh/sisoe24/execute-in-iterm2.svg/?label=active+issues&show_trend=true&token=_61Aj0xbCTjjbxPEod668-Ay)](https://deepsource.io/gh/sisoe24/execute-in-iterm2/?ref=repository-badge)
 
-[![Download](https://img.shields.io/badge/Marketplace-Download-blue)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
-[![Version](https://img.shields.io/visual-studio-marketplace/v/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2&ssr=false#version-history)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
-[![Ratings](https://img.shields.io/visual-studio-marketplace/r/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
-[![Last Update](https://img.shields.io/visual-studio-marketplace/last-updated/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![vscode-marketplace](https://img.shields.io/badge/vscode-marketplace-blue)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![vscode-version](https://img.shields.io/visual-studio-marketplace/v/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2&ssr=false#version-history)
+[![vscode-installs](https://img.shields.io/visual-studio-marketplace/i/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+[![vscode-ratings](https://img.shields.io/visual-studio-marketplace/r/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2&ssr=false#review-details)
+[![vscode-last-update](https://img.shields.io/visual-studio-marketplace/last-updated/virgilsisoe.execute-in-iterm2)](https://marketplace.visualstudio.com/items?itemName=virgilsisoe.execute-in-iterm2)
+
+[![openvsx-marketplace](https://img.shields.io/badge/openvsx-marketplace-C160EF)](https://open-vsx.org/extension/virgilsisoe/execute-in-iterm2)
+[![openvsx-version](https://img.shields.io/open-vsx/v/virgilsisoe/execute-in-iterm2?label=version)](https://open-vsx.org/extension/virgilsisoe/execute-in-iterm2/changes)
+[![openvsx-downloads](https://img.shields.io/open-vsx/dt/virgilsisoe/execute-in-iterm2)](https://open-vsx.org/extension/virgilsisoe/execute-in-iterm2)
+[![openvsx-rating](https://img.shields.io/open-vsx/rating/virgilsisoe/execute-in-iterm2)](https://open-vsx.org/extension/virgilsisoe/execute-in-iterm2/reviews)
 
 # 1. Execute in iTerm2 README
 
