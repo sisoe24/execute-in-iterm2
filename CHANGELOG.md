@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.3] - 2022-10-26
+
+### Removed
+
+- Remove settings to hide toolbar button since its now a default option in vscode.
+
 ## [0.2.0] - 2022-03-22
 
 ### Added
