@@ -22,7 +22,7 @@
 		"php"
 	],
 	"description": "Execute the current active file inside iTerm2.",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"engines": {
 		"vscode": "^1.64.0"
 	},
