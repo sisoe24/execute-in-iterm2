@@ -58,11 +58,6 @@
 						"type": "string",
 						"markdownDescription": "iTerm2 Python path or a Python interpreter that has access to `iTerm2` and `pyobjc` modules"
 					},
-					"executeInITerm2.other.showToolbarButton": {
-						"type": "boolean",
-						"default": true,
-						"description": "Show the execute button in the editor toolbar."
-					},
 					"executeInITerm2.fileCommands": {
 						"type": "object",
 						"markdownDescription": "A key value pair for extension and command: `\"extension\":\"command\"",
@@ -87,7 +82,7 @@
 				{
 					"command": "execute-in-iterm2.executeFileCommand",
 					"group": "navigation",
-					"when": "config.executeInITerm2.other.showToolbarButton && resourceExtname in ext.supportedFiles"
+					"when": "resourceExtname in ext.supportedFiles"
 				}
 			]
 		}

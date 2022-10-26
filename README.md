@@ -153,10 +153,6 @@ Example `keybindings.json`:
 
   > If you language is not present, feel free to submit a request or make a PR.
 
-- `executeInITerm2.other.showToolbarButton`: `boolean`
-
-  Show the execute code button in the editor toolbar.
-
 ## 1.7. Known Issues
 
 - Reloading Visual Studio Code will cause the id tab to reset, so a new one will get created instead of using the existing one.
