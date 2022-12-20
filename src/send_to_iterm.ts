@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as vscode from "vscode";
 import { exec } from "child_process";
-import { writeFileSync } from "fs";
+import { statSync, writeFileSync } from "fs";
 
 import * as utils from "./utils";
 
@@ -141,4 +141,18 @@ export async function executeInputCommand(): Promise<boolean | null> {
         return executeInIterm(terminalCmd);
     }
     return false;
+}
+
+/**
+ * Execute the open command.
+ *
+ * Open the select directory in iterm. If selected file is a file then use its parent
+ *
+ */
+export async function executeOpenCommand(uri: vscode.Uri) {
+    let file = uri.fsPath;
+    if (statSync(file).isFile()) {
+        file = path.dirname(file);
+    }
+    executeInIterm(`cd ${file}; clear`);
 }
