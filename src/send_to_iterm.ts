@@ -92,7 +92,6 @@ export function executeInIterm(terminalCmd: string): boolean | null {
             vscode.window.showErrorMessage(stderr);
             return null;
         }
-        console.log(stdout);
         // XXX: can use stdout for something?
     });
     return true;
