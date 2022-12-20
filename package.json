@@ -47,7 +47,8 @@
 			{
 				"command": "execute-in-iterm2.openDirectory",
 				"title": "New iTerm2 Tab Here",
-				"category": "iTerm2"
+				"category": "iTerm2",
+				"enablement": "false"
 			},
 			{
 				"command": "execute-in-iterm2.executeInputCommand",
