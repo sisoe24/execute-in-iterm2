@@ -45,6 +45,11 @@
 				}
 			},
 			{
+				"command": "execute-in-iterm2.openDirectory",
+				"title": "Open directory in iterm2",
+				"category": "iTerm2"
+			},
+			{
 				"command": "execute-in-iterm2.executeInputCommand",
 				"title": "Execute command",
 				"category": "iTerm2"
@@ -83,6 +88,11 @@
 					"command": "execute-in-iterm2.executeFileCommand",
 					"group": "navigation",
 					"when": "resourceExtname in ext.supportedFiles"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "execute-in-iterm2.openDirectory"
 				}
 			]
 		}
