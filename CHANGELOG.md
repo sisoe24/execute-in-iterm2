@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.0] - 2022-12-19
+
+### Added
+
+- Open new iTerm2 window in directory by selecting a file in the Explorer menu.
+
 ## [0.2.3] - 2022-10-26
 
 ### Removed
