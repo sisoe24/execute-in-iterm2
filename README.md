@@ -20,7 +20,7 @@ Execute commands inside [iTerm2](https://iterm2.com/index.html) based on the fil
   - [1.1. Requirements](#11-requirements)
   - [1.2. Features](#12-features)
   - [1.3. Usage](#13-usage)
-  - [1.4. Execute file command & placeholders](#14-execute-file-command--placeholders)
+  - [1.4. Execute file command \& placeholders](#14-execute-file-command--placeholders)
     - [1.4.1. Placeholders](#141-placeholders)
   - [1.5. Available Extension Commands](#15-available-extension-commands)
   - [1.6. Extension Settings](#16-extension-settings)
@@ -43,6 +43,7 @@ The extension setting *iTerm2: Python Path* must contain a valid Python interpre
 
 - Send commands to iTerm2 based on the current file extension.
 - Send commands to iTerm2 from the input dialog.
+- New iTerm2 window context menu option in the Explorer files.
 
 ## 1.3. Usage
 
@@ -155,6 +156,7 @@ Example `keybindings.json`:
 
 ## 1.7. Known Issues
 
+- The Explorer context menu command might fail the first time if your shell has many scripts to load/source.
 - Reloading Visual Studio Code will cause the id tab to reset, so a new one will get created instead of using the existing one.
 - Changing the iTerm2 active window will cause the extension to create a new tab for the new window.
 - It does not work when the iTerm2 window is minimized (`CMD + M`).
