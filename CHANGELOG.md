@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.2] - 2022-12-20
+
+## Fixed
+
+- Fixed the context menu being always blocked.
+
 ## [0.3.0] - 2022-12-19
 
 ### Added
