@@ -46,9 +46,7 @@
 			},
 			{
 				"command": "execute-in-iterm2.openDirectory",
-				"title": "New iTerm2 Tab Here",
-				"category": "iTerm2",
-				"enablement": "false"
+				"title": "New iTerm2 window here"
 			},
 			{
 				"command": "execute-in-iterm2.executeInputCommand",
@@ -84,6 +82,12 @@
 			}
 		],
 		"menus": {
+			"commandPalette": [
+				{
+					"command": "execute-in-iterm2.openDirectory",
+					"when": "false"
+				}
+			],
 			"editor/title": [
 				{
 					"command": "execute-in-iterm2.executeFileCommand",
