@@ -102,10 +102,11 @@ Some convenient placeholders are available for writing commands:
 All commands are available by opening the Command Palette (`Command+Shift+P` on macOS and `Ctrl+Shift+P` on Windows/Linux) and typing in one of the following Command Name:
 
 By default, the extension does not provide any shortcut. But you can assign each command to one.(see [Key Bindings for Visual Studio Code](https://code.visualstudio.com/docs/getstarted/keybindings) for more information).
-| Command Name                    | Command ID                              | Description                     |
-| ------------------------------- | --------------------------------------- | ------------------------------- |
-| `iTerm2: Execute file command`  | `execute-in-iterm2.executeFileCommand`  | Send command based on file type |
-| `iTerm2: Execute input command` | `execute-in-iterm2.executeInputCommand` | Send command from input dialog  |
+| Command Name                    | Command ID                              | Description                                                       |
+| ------------------------------- | --------------------------------------- | ----------------------------------------------------------------- |
+| `iTerm2: Execute file command`  | `execute-in-iterm2.executeFileCommand`  | Send command based on file type                                   |
+| `iTerm2: Execute input command` | `execute-in-iterm2.executeInputCommand` | Send command from input dialog                                    |
+|                                 | `execute-in-iterm2.openDirectory`       | Open iTerm2 window in the selected directory via the context menu |
 
 - `iTerm2: Execute file command` can be access also via a button in the Editor Toolbar.
 
